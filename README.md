@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is the code repository for our paper "Towards Generalizable Deepfake Detection by Primary Region Regularization," which has been accepted by ACM ToMM.
+This is the code repository for our paper "[Towards Generalizable Deepfake Detection by Primary Region Regularization](https://dl.acm.org/doi/10.1145/3777474)," which has been accepted by ACM ToMM.
 Our method achieves improved generalizability of deepfake detection by searching for the 'primary region' in the face.
 
 ## Pipeline

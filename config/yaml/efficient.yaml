@@ -1,0 +1,69 @@
+general:
+  seed: 5858
+  gpu_id: 0
+  mode: test
+  vis: False
+  fine_tune: False
+  save_mask: False
+  model_select: 'efficient'
+  continue_training: False
+  exp_name: Efficient_eer
+  exp_id: eer_2
+
+data:
+  split: False
+  # if split is True, use the following parameters to train model with different subset of FF++.
+  dataset_name: [FaceShifter]
+  dataset_name_val: [FaceShifter]
+
+  batch_size: 32
+
+  use_mask: False
+  use_random_mask: False
+  use_lmk_mask: False
+  use_pr_mask: False
+
+  data_path_train: DF_Dataset/FF++_faces
+  data_path_val: DF_Dataset/FF++_faces
+  data_path_test: DF_Dataset/FF++_faces
+
+  data_path_dfdc: DF_Dataset/DFDC
+  data_path_celeb_df: DF_Dataset/Celeb-DF
+  data_path_df10: DF_Dataset/DF10_faces
+  data_path_wild: DF_Dataset/WildDeepfake
+  data_path_ffiw: DF_Dataset/FFIW
+
+  bio_choose: full
+  remove: True
+  reduction: 'none'
+  load_checkpoint: PRLE_ckpt/Efficient
+  save_checkpoint: PRLE_ckpt/Efficient
+
+  mask_ratio_path: Deepfake_Dataset/heat_map_fusion
+  mask_path: Deepfake_Dataset/heat_map_fusion
+  save_img_path: Deepfake_Dataset/img_show
+
+network:
+  lambda_ortho: 0.2
+  epoch_fc: 0
+  epochs_net: 10
+  lr: 2.e-4
+  lr_finetune: 5.e-6
+
+vis:
+    data_split: [test]
+    img_label: fake
+    subset:   [Deepfakes] #[youtube, Deepfakes, Face2Face, FaceSwap, FaceShifter, NeuralTextures]
+    data_path: Deepfake_Dataset/FF++_faces_new/train/fake/Deepfakes/
+    cam_save_path: ./heat_map_for_ffpp/
+    dataset_select: FFPP
+    save_template: '%04d_%s_%s_wo_mask.png'
+    target: 0 # 0 for fake, 1 for real
+    save_result: True
+    save_npy: False
+
+logging:
+    print_freq: 10
+    eval_freq: 1
+
+progress: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0] #[0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]

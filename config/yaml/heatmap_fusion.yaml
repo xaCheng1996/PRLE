@@ -1,0 +1,16 @@
+hyper_fusion:
+  tau_1: 0.3
+  tau_2: 0.1
+  tau_3: 0.2
+
+method_fusion: avg
+
+heatmap_generate_model: [xception, efficient, vgg] # [xception, srm, f3net, f3net, vgg,]
+dataset_split: [train, val, test]
+dataset: [youtube, Deepfakes, Face2Face, FaceSwap, FaceShifter, NeuralTextures] # [youtube, Deepfakes, Face2Face, FaceSwap, FaceShifter, NeuralTextures]
+dataset_dist: [1]
+heatmap_path: /home/harry/data/heat_map_gt
+fusion_save_path: /home/harry/data/heat_map_fusion_xevf
+fusion_avg_save_path: /home/harry/data/heat_map_fusion_avg_high_tau1
+classes: [fake, real]
+

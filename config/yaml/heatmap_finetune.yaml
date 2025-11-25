@@ -1,0 +1,7 @@
+heatmap_generate_model: [xception, f3net]
+dataset: [youtube] # Deepfakes, Face2Face, FaceSwap, FaceShifter, NeuralTextures
+dataset_dist: [1]
+fusion_heatmap_path: /root/autodl-tmp/heat_map_fusion_gt
+ori_path: /root/autodl-tmp/FF++_faces
+save_heatmap_path: /root/autodl-tmp/heat_map_finetune_gt
+progress: [0.7]
